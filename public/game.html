@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ქვიზი - თამაში</title>
+    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+    <div class="container">
+        <header style="text-align:center; margin-bottom:2rem;">
+            <h1 style="font-size:3rem; color:#56a5eb;">🧠 ქვიზი მეგობრებთან ერთად!</h1>
+            <p style="font-size:1.3rem; color:#555;">კითხვებს გაეცი პასუხი და დააგროვე ქულები!</p>
+        </header>
+        <div id="spinner" class="spinner hidden"></div>
+        <div id="game" class="justify-center flex-column">
+            <div id="hud">
+                <div class="hud-item">
+                    <p class="hud-prefix">კატეგორია</p>
+                    <h2 class="hud-main-text" id="category">იტვირთება...</h2>
+                </div>
+                <div class="hud-item">
+                    <p class="hud-prefix">პროგრესი</p>
+                    <h2 class="hud-main-text" id="progressText">კითხვა</h2>
+                </div>
+                <div class="hud-item">
+                    <p class="hud-prefix">ქულა</p>
+                    <h2 class="hud-main-text" id="score">0</h2>
+                </div>
+            </div>
+            <h2 id="question">კითხვა გამოჩნდება აქ</h2>
+            <div class="choice-container">
+                <p class="choice-prefix">ა</p>
+                <p class="choice-text" data-number="1">პასუხი 1</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">ბ</p>
+                <p class="choice-text" data-number="2">პასუხი 2</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">გ</p>
+                <p class="choice-text" data-number="3">პასუხი 3</p>
+            </div>
+            <div class="choice-container">
+                <p class="choice-prefix">დ</p>
+                <p class="choice-text" data-number="4">პასუხი 4</p>
+            </div>
+        </div>
+    </div>
+    <script src="./game.js"></script>
+</body>
+</html> 

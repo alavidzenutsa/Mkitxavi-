@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ქვიზი</title>
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-links">
+            <a href="/" class="navbar-link active">მთავარი</a>
+            <a href="#" class="navbar-link" id="about-link">ჩვენ შესახებ</a>
+            <a href="/highscores.html" class="navbar-link">შედეგები</a>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>ქვიზი</h1>
+        <h2>აირჩიე კატეგორია:</h2>
+        <div class="category-buttons">
+            <a class="btn" href="/game.html?category=geography">გეოგრაფია</a>
+            <a class="btn" href="/game.html?category=music">მუსიკა</a>
+            <a class="btn" href="/game.html?category=history">ისტორია</a>
+            <a class="btn" href="/game.html?category=code">კოდი</a>
+            <a class="btn" href="/game.html?category=physics">ფიზიკა</a>
+            <a class="btn" href="/game.html?category=general">ზოგადი ცოდნა</a>
+        </div>
+        <a class="btn" href="/highscores.html">შედეგები</a>
+    </div>
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-about">&times;</span>
+            <h2>ჩვენს შესახებ</h2>
+            <p>ეს ქვიზ აპლიკაცია შექმნილია ცოდნის გასაზრდელად და მეგობრებთან გასართობად. წარმატებებს გისურვებთ!</p>
+        </div>
+    </div>
+    <script>
+    // About modal logic
+    const aboutLink = document.getElementById('about-link');
+    const aboutModal = document.getElementById('about-modal');
+    const closeAbout = document.getElementById('close-about');
+    aboutLink.onclick = function(e) {
+        e.preventDefault();
+        aboutModal.style.display = 'block';
+    };
+    closeAbout.onclick = function() {
+        aboutModal.style.display = 'none';
+    };
+    window.onclick = function(event) {
+        if (event.target === aboutModal) {
+            aboutModal.style.display = 'none';
+        }
+    };
+    </script>
+</body>
+</html> 

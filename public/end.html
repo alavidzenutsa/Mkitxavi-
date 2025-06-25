@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>გილოცავთ!</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-links">
+            <a href="/index.html" class="navbar-link">მთავარი</a>
+            <a href="#" class="navbar-link" id="about-link">ჩვენ შესახებ</a>
+            <a href="/highscores.html" class="navbar-link">შედეგები</a>
+        </div>
+    </nav>
+    <div class="container">
+        <header style="text-align:center; margin-bottom:2rem;">
+            <h1 style="font-size:3rem; color:#56a5eb;">🧠 ქვიზი მეგობრებთან ერთად!</h1>
+            <p style="font-size:1.3rem; color:#555;">გილოცავ! ნახე შენი შედეგი და შეინახე ქულა.</p>
+        </header>
+        <canvas id="confetti-canvas" class="confetti-canvas"></canvas>
+        <div id="end" class="flex-center flex-column">
+            <h1 id="finalScore">0</h1>
+            <h2 id="category">კატეგორია</h2>
+            <form>
+                <input
+                    type="text"
+                    name="username"
+                    id="username"
+                    placeholder="სახელი"
+                />
+                <button
+                    type="submit"
+                    class="btn"
+                    id="saveScoreBtn"
+                    onclick="saveHighScore(event)"
+                    disabled
+                >
+                    შენახვა
+                </button>
+            </form>
+            <a class="btn" href="/game.html">თავიდან თამაში</a>
+            <a class="btn" href="/index.html">მთავარზე დაბრუნება</a>
+        </div>
+    </div>
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="close-about">&times;</span>
+            <h2>ჩვენ შესახებ</h2>
+            <p>ეს ქვიზ აპლიკაცია არის საბოლოო პროექტი და შექმნილია ცოდნის გამყარებისთვის. have fun!</p>
+        </div>
+    </div>
+    <script src="end.js"></script>
+    <script>
+    // About modal logic
+    const aboutLink = document.getElementById('about-link');
+    const aboutModal = document.getElementById('about-modal');
+    const closeAbout = document.getElementById('close-about');
+    aboutLink.onclick = function(e) {
+        e.preventDefault();
+        aboutModal.style.display = 'block';
+    };
+    closeAbout.onclick = function() {
+        aboutModal.style.display = 'none';
+    };
+    window.onclick = function(event) {
+        if (event.target === aboutModal) {
+            aboutModal.style.display = 'none';
+        }
+    };
+    </script>
+</body>
+</html> 
